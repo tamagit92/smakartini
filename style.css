@@ -1,0 +1,765 @@
+/* Reset & umum */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f8;
+    /*padding-top: 70px;*/
+    color: #333;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 4.5rem 0;
+}
+
+/* HEADER */
+header {
+    background-color: #004d99;
+    color: white;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    cursor: pointer; /* pointer saat hover */
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* efek zoom kecil */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #003366;
+}
+
+/* ACTIVE MENU */
+nav a.active {
+    background: #ffd700 !important;
+    color: #004d99 !important;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 1rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+/* SLIDER BERANDA */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides .slide {
+    display: none;
+    position: relative;
+}
+
+.slides .slide img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 10px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    user-select: none;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.caption.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stats */
+.stats-section {
+    background: linear-gradient(135deg, #e6f0ff 0%, #d4e6ff 100%);
+    padding: 4rem 2rem;
+    border-radius: 25px;
+    margin: 3rem auto;
+    max-width: 1000px;
+    box-shadow: 0 15px 50px rgba(0,77,153,0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.stat-box {
+    padding: 2.5rem 1.5rem;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,77,153,0.1);
+}
+
+.stat-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,77,153,0.25);
+}
+
+.stat-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #004d99, #004d99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #004d99;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.15rem;
+    color: #004d99;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 3rem 1rem;
+        margin: 2rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+    
+    .stat-icon {
+        font-size: 3rem;
+    }
+}
+
+/* SAMBUTAN */
+section#sambutan {
+    background-color: #e6f0ff;
+    border-left: 6px solid #004d99;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #23395d;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#sambutan h2 {
+    text-align: center;
+    color: #004d99;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+section#sambutan em {
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* GALERI */
+section#galeri h2 {
+    text-align: center;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+}
+
+.gallery-slide {
+    flex-shrink: 0;
+    width: calc(33.333% - 0.67rem);
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-slide img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,77,153,0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.gallery-btn:hover {
+    background: #004d99;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-gallery {
+    left: 10px;
+}
+
+.next-gallery {
+    right: 10px;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* PROFIL GURU */
+section#profil h2 {
+    text-align: center;
+    color: #004d99;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-slide {
+    min-width: 180px;
+    margin-right: 1rem;
+    background-color: #e6f0ff;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #004d99;
+    margin: 0 auto 1rem auto;
+}
+
+.carousel-slide h3 {
+    margin: 0.5rem 0 0.3rem 0;
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.carousel-slide p {
+    margin: 0;
+    font-style: italic;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 77, 153, 0.6);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    border-radius: 10%;
+    user-select: none;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 77, 153, 0.9);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* KONTAK */
+section#kontak h2 {
+    text-align: center;
+}
+
+.kontak-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.kontak-box {
+    background: #e6f0ff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+    max-width: 300px;
+    padding: 1rem 1.5rem;
+    gap: 2rem;
+}
+
+.kontak-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #004d99, #0066cc);
+    color: white;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,77,153,0.3);
+    transition: all 0.3s ease;
+    line-height: 1 !important; /* Reset line-height Font Awesome */
+    position: relative;
+}
+
+.kontak-icon::before {
+    line-height: 1 !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.kontak-icon {
+    font-size: 1.8rem !important; /* Font Awesome size */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #004d99, #0066cc);
+    color: white !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,77,153,0.3);
+    transition: all 0.3s ease;
+}
+
+.kontak-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,77,153,0.4);
+}
+
+.kontak-title {
+    margin: 0;
+    font-weight: bold;
+    color: #23395d;
+}
+
+.kontak-value {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.9rem;
+    color: #003366;
+}
+
+/* Alamat */
+section#alamat h2 {
+    text-align: center;
+}
+
+/* TOMTOM */
+.btn {
+    display: inline-block;
+    background: #004d99;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #003366;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+}
+
+/* FOOTER */
+footer {
+    background: #004d99;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: #004d99;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 0 10px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+        z-index: 1001;
+    }
+    
+    nav ul.nav-list.show {
+        display: flex;
+    }
+    
+    nav ul.nav-list li {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    nav ul.nav-list li:last-child {
+        border-bottom: none;
+    }
+    
+    nav ul.nav-list a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul.nav-list a:hover {
+        background-color: #003366;
+    }
+
+    /* Responsive lainnya */
+    .carousel-slide {
+        min-width: 140px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .kontak-box {
+        min-width: auto;
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .gallery-slide {
+        width: calc(50% - 0.5rem);
+    }
+    
+    .gallery-slide img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-slide {
+        width: calc(100% - 0.5rem);
+    }
+    
+    .gallery-slide img {
+        height: 250px;
+    }
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    cursor: pointer;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* RESPONSIVE TYPOGRAPHY GLOBAL */
+h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+h2 { font-size: clamp(1.3rem, 4vw, 2rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.6rem); }
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.2rem; }
+}
+
+
+/* HALAMAN PENDAFTARAN - SEMUA KELAS */
+.persyaratan-box, .alur-box, .form-section, .faq-section {
+    background: #fff;
+    border-radius: 18px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.persyaratan-box h3, .alur-box h3, .form-section h3, .faq-section h3 {
+    color: #004d99;
+    margin-bottom: 1.2rem;
+}
+
+.persyaratan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.persyaratan-list li {
+    background: #f8fbff;
+    margin-bottom: 0.8rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 10px;
+    border-left: 4px solid #004d99;
+    font-size: 0.98rem;
+}
+
+.catatan-list {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
+}
+
+.catatan-list li {
+    margin-bottom: 0.5rem;
+}
+
+.biaya-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.biaya-table th,
+.biaya-table td {
+    border: 1px solid #c5d4f2;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+.biaya-table th {
+    background: #004d99;
+    color: #fff;
+}
+
+.biaya-table tfoot td {
+    font-weight: 700;
+    background: #e6f0ff;
+}
+
+.biaya-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.biaya-item {
+    background: #f8fbff;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+}
+
+.biaya-label {
+    display: block;
+    font-weight: 600;
+    color: #004d99;
+}
+
+.biaya-harga {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d32f2f;
+}
+
+.highlight {
+    color: #d32f2f;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #e55a2b, #e6820d) !important;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.faq-item h4 {
+    margin-bottom: 0.4rem;
+    color: #004d99;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+}
